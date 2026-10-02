@@ -1,0 +1,24 @@
+{
+ "note": "FA-1 reference: result_sha256 of the first 12 dry-run figures with DRYRUN_EPOCH pinned. Valid only for the runtime below.",
+ "runtime": {
+  "python": "3.12.3",
+  "matplotlib": "3.10.8",
+  "numpy": "2.4.4",
+  "pillow": "12.1.1",
+  "pdfplumber": "0.11.9"
+ },
+ "result_sha256": [
+  "03e881969a2a699cc9965380372bc47f088f74fb9a67371187d3f095ae0797ea",
+  "afd7d21676728c85ab4902759c55a22b5c29451e18bb88d9b3f941980d2097da",
+  "e6921691adf6c3ea5e275ecae00372bdb30ac5e3880e7ef1f483c781dd658822",
+  "e13a6abe42a556059474004fc8830d45ad30a3c285bbfbb3e3b3881a8783a9ff",
+  "a452024092da54a894d323d2fc16284d9328fb3c7a84b16d355cda35c104370b",
+  "6b7e53f590ba028d7ee948de6c846fddd47ec5af2165b576da7d4f7a57af6faa",
+  "78c7b09f02ef18117779de09f4dd75118821acfef3ba775ba9bd8c9f74ed67e9",
+  "e150374ae4d8690a6515b71166c14845395cc74fed336f76c31aa98f24eb2ebf",
+  "f256a7a17d2ff99417d995d93903f108437139e43ef61ff2c704071c11d3d406",
+  "a1a231192d5f55d8e1e8e57d8e72ed9f24db79a9e39e8a7b19f404c7368c0465",
+  "f73f10862fab09c93fcefe033dfb9e7263409babeab32a29b67dbf2089e750e0",
+  "3bd724953d5a01989f26a2444dafdabbadff632e82b4c7c44d16e860e90d90e3"
+ ]
+}

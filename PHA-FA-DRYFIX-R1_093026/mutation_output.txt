@@ -1,0 +1,9 @@
+KILLED    M1 pin removed
+KILLED    M2 pin applied only after the first figure
+KILLED    M3 prior environment not restored
+KILLED    M4 unset prior not removed
+KILLED    M5 pin only for large runs
+KILLED    M6 pin value changed
+KILLED    M7 runtime guard omits numpy
+KILLED    M8 runtime guard omits pillow
+8/8 killed

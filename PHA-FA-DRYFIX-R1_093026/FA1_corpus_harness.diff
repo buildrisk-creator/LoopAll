@@ -1,0 +1,32 @@
+--- a/corpus_harness.py	2026-09-16 23:41:10.000000000 +0000
++++ b/corpus_harness.py	2026-09-30 06:41:29.439064610 +0000
+@@ -32,6 +32,9 @@
+ from attest2 import attest_v2
+ from declaration import Declaration
+ 
++# Fixed PDF timestamp for the synthetic dry run (FA-1). Seconds since 1970-01-01T00:00:00Z.
++DRYRUN_EPOCH = "0"
++
+ CATEGORIES = ("extraction", "calibration", "lineage", "rendering", "none")
+ 
+ # Which engine finding codes map to which failure category
+@@ -146,6 +149,19 @@
+     from test_hostile import Y, _dataset, _decl, _fig, _pdf
+ 
+     random.seed(20260916)
++    # FA-1: pin the PDF CreationDate so every run of the dry run is byte-identical.
++    prior_epoch = os.environ.get("SOURCE_DATE_EPOCH")
++    os.environ["SOURCE_DATE_EPOCH"] = DRYRUN_EPOCH
++    try:
++        _dryrun_body(n, root, random, sha256_bytes, Y, _dataset, _decl, _fig, _pdf)
++    finally:
++        if prior_epoch is None:
++            os.environ.pop("SOURCE_DATE_EPOCH", None)
++        else:
++            os.environ["SOURCE_DATE_EPOCH"] = prior_epoch
++
++
++def _dryrun_body(n, root, random, sha256_bytes, Y, _dataset, _decl, _fig, _pdf):
+     attacks = ["relabel", "baseline", "units", "invert", "multiplier", "twin", "clip", "source"]
+     root.mkdir(parents=True, exist_ok=True)
+     for i in range(n):
